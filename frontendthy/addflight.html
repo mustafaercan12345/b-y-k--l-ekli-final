@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MilesSmiles</title>
+    <!-- Bootstrap CSS CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!-- jQuery CDN -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <style>
+        .display-section {
+            border: 1px solid #ff002b;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            background-color: #fff;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .display-section h2 {
+            color: #ff002b;
+            margin-bottom: 15px;
+        }
+
+        .display-section p {
+            font-size: 1.2rem;
+        }
+
+        .custom-button {
+            background-color: #ff002b;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+     <!-- Navbar -->
+     <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #ff002b;">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html">
+                <img src="logo.png" alt="" width="40" height="40">
+              </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="index.html" style="color: rgb(235, 235, 235);">Miles & Smiles</a>
+              </li>
+            </ul>
+            <div class="d-flex align-items-start">
+                <a  class="nav-link" href="register.html"><span style="color: white;">Join the Miles & Smiles Program</span></a>
+                <a class="nav-link" href="login.html"> <span style="color: white;">Login</span>
+                    <img src="unkpp.png" alt="Profile Icon" style="height: 25px; width: 25px; border-radius: 50%; background-color: white;">
+                </a>
+            </div>
+          </div>
+        </div>
+      </nav>
+  <!-- Navbar -->
+  
+  <div class="container mt-4">
+    <div class="row justify-content-center">
+        <div class="col-12 col-md-10 col-lg-8 display-section">
+            <h2>Flight Information Entry</h2>
+            <p>Please fill out the form below to enter the flight details. Ensure all information is correct before saving.</p>
+        </div>
+    </div>
+    <div class="container border p-4 mt-4">
+        <h4 class="mb-4">Flight Entry</h4>
+        <div class="row mb-3">
+            <div class="col-md-6">
+                <label for="flightDate" class="form-label me-2">Flight Date</label>
+                <input id="startDate" class="form-control" type="datetime-local" />
+            </div>
+            <div class="col-md-6">
+                <label for="flightCode" class="form-label">Flight Code</label>
+                <input type="text" class="form-control" id="flightCode" placeholder="">
+            </div>
+        </div>
+        <div class="row mb-3">
+            <div class="col-md-6">
+                <label for="milePoint" class="form-label">Mile Point</label>
+                <input type="number" class="form-control" id="milePoint" placeholder="">
+            </div>
+            <div class="col-md-6">
+                <label for="capacity" class="form-label">Capacity</label>
+                <input type="number" class="form-control" id="capacity" placeholder="">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6 mb-3">
+                <label for="departureCity" class="form-label">Departure City</label>
+                <select id="departureCity" class="form-select">
+                    <option value="izmir">Izmir</option>
+                    <option value="istanbul">Istanbul</option>
+                    <option value="ankara">Ankara</option>
+                    <option value="antalya">Antalya</option>
+                </select>
+            </div>
+            <div class="col-md-6 mb-3">
+                <label for="arrivalCity" class="form-label">Arrival City</label>
+                <select id="arrivalCity" class="form-select">
+                    <option value="izmir">Izmir</option>
+                    <option value="istanbul">Istanbul</option>
+                    <option value="ankara">Ankara</option>
+                    <option value="antalya">Antalya</option>
+                </select>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 text-center">
+                <button class="btn btn-primary custom-button">Add Flight</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function(){
+            $('#calendarButton').click(function(){
+                $('#flightDate').focus();
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MilesSmiles</title>
+    <!-- Bootstrap CSS CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!-- jQuery CDN -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.3/themes/base/jquery-ui.min.css" integrity="sha512-8PjjnSP8Bw/WNPxF6wkklW6qlQJdWJc/3w/ZQPvZ/1bjVDkrrSqLe9mfPYrMxtnzsXFPc434+u4FHLnLjXTSsg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://code.jquery.com/ui/1.13.3/jquery-ui.js" integrity="sha256-J8ay84czFazJ9wcTuSDLpPmwpMXOm573OUtZHPQqpEU=" crossorigin="anonymous"></script>
+    <script src="https://rawgit.com/dubrox/Multiple-Dates-Picker-for-jQuery-UI/master/jquery-ui.multidatespicker.js"></script>
+    <style>
+.ui-datepicker {
+    font-size: 11px;
+}
+
+@media (max-width: 600px) {
+    .ui-datepicker {
+        font-size: 11px;
+    }
+}
+      a.ui-state-default{
+   color: #ff002b !important;
+ } 
+      .btn-outline-primary {
+          color: #ff002b;
+          border-color: #ff002b;
+      }
+  
+      .btn-outline-primary:hover,
+      .btn-outline-primary:focus {
+          color: #fff;
+          background-color: #ff002b;
+          border-color: #ff002b;
+      }
+  
+      .btn-primary {
+          background-color: #ff002b;
+          border-color: #ff002b;
+      }
+  
+      .btn-primary:hover,
+      .btn-primary:focus {
+          background-color: #d40024;
+          border-color: #d40024;
+      }
+  
+      .form-check-input:checked {
+          background-color: #ff002b;
+          border-color: #ff002b;
+      }
+  
+      .form-check-label {
+          color: #343a40;
+      }
+  
+      .input-group .btn-outline-secondary {
+          color: #343a40;
+          border-color: #343a40;
+      }
+  
+      .input-group .btn-outline-secondary:hover,
+      .input-group .btn-outline-secondary:focus {
+          color: #fff;
+          background-color: #343a40;
+          border-color: #343a40;
+      }
+  
+      .form-label,
+      .form-control {
+          color: #343a40;
+      }
+  
+      .form-control {
+          font-size: 14px;
+      }
+  
+      .btn-group .btn-outline-primary,
+      .input-group .btn-outline-secondary,
+      .form-check-label {
+          font-size: 16px;
+      }
+  
+      .calendar-container {
+          color: #182c41;
+      }
+  
+      .btn-check:focus + .btn-outline-primary,
+      .btn-check:checked + .btn-outline-primary {
+          background-color: #ff002b;
+          border-color: #ff002b;
+      }
+  
+      .d-grid a .btn {
+          font-size: 18px;
+      }
+      .container {
+          margin: 0 auto;
+      }
+      .custom-panel {
+            border: 3px solid #ff002b;
+            border-radius: 8px;
+            padding: 10px; /* Bu değeri daha da küçültebilirsiniz */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            background-color: #fff;
+            margin: 0 auto; /* Ortalamak için */
+        }
+        .display-section {
+            border: 3px solid #ff002b;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            background-color: #fff;
+            text-align: center;
+        }
+
+        .display-section h2 {
+            color: #ff002b;
+            margin-bottom: 15px;
+        }
+
+        .display-section p {
+            font-size: 1.2rem;
+        }
+  </style>
+  </head>
+     <!-- Navbar -->
+     <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #ff002b;">
+      <div class="container-fluid">
+          <a class="navbar-brand" href="index.html">
+              <img src="logo.png" alt="" width="40" height="40">
+            </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="index.html" style="color: rgb(235, 235, 235);">Miles & Smiles</a>
+            </li>
+          </ul>
+          <div class="d-flex align-items-start">
+              <a  class="nav-link" href="register.html"><span style="color: white;">Join the Miles & Smiles Program</span></a>
+              <a class="nav-link" href="login.html"> <span style="color: white;">Login</span>
+                  <img src="unkpp.png" alt="Profile Icon" style="height: 25px; width: 25px; border-radius: 50%; background-color: white;">
+              </a>
+          </div>
+        </div>
+      </div>
+    </nav>
+<!-- Navbar -->
+  <div class="container mt-4">
+    <div class="row justify-content-center mb-5">
+      <div class="col-12 col-md-10 col-lg-8 display-section">
+          <h2>Welcome to Miles & Smiles</h2>
+          <p>Use the form below to find the best flights. You can search for round trips, one-way flights, and more. Customize your search with flexible dates and direct flights options. Start your journey today!</p>
+      </div>
+  </div>
+    <!-- Section 2: Flight Details Input -->
+    <div class="">
+      <div class="row mb-3 ms-5">
+        <div class="col-12 col-md-2 offset-md-1">
+            <label for="from" class="form-label">From</label>
+            <select class="form-select" id="from">
+                <option value="Izmir">Izmir</option>
+                <option value="Ankara">Ankara</option>
+                <option value="Istanbul">Istanbul</option>
+                <!-- Add more options as needed -->
+            </select>
+        </div>
+        <div class="col-12 col-md-2 ">
+            <label for="to" class="form-label">To</label>
+            <select class="form-select" id="to">
+                <option value="Istanbul">Istanbul</option>
+                <option value="Ankara">Ankara</option>
+                <option value="Izmir">Izmir</option>
+                <!-- Add more options as needed -->
+            </select>
+        </div>
+        <div class="col-12 col-md-2 offset-md-1" id="departureCol">
+            <label for="departureDate" class="form-label">Departure</label>
+            <input type="text" class="form-control" id="departureDate" placeholder="11 May" readonly>
+        </div>
+        <div class="col-12 col-md-2" id="returnDateContainer">
+            <label for="returnDate" class="form-label">Return</label>
+            <input type="text" class="form-control" id="returnDate" placeholder="12 May" readonly>
+        </div>
+    </div>
+
+    <!-- Section 3: Date Options -->
+    <div class="row mb-3 ms-5">
+
+        <div class="col-12 col-md-4 offset-md-1 col-lg-4">
+            <div class="">
+                <div class="btn-group w-100" role="group" aria-label="Trip Type">
+                    <input type="radio" class="btn-check" name="tripType" id="roundTrip" autocomplete="off" checked>
+                    <label class="btn btn-outline-primary" for="roundTrip">Round trip</label>
+        
+                    <input type="radio" class="btn-check" name="tripType" id="oneWay" autocomplete="off">
+                    <label class="btn btn-outline-primary" for="oneWay">One way</label>
+                </div>
+            </div>
+            <div class="d-flex align-items-center mt-5 mb-4">
+                <div class="form-check me-2">
+                    <input class="form-check-input" type="checkbox" id="flexibleDates">
+                    <label class="form-check-label" for="flexibleDates">Flexible dates</label>
+                </div>
+                <div class="form-check me-2">
+                    <input class="form-check-input" type="checkbox" id="directFlights">
+                    <label class="form-check-label" for="directFlights">Direct flights</label>
+                </div>
+                <div class="input-group">
+                    <button class="btn btn-outline-secondary" type="button" id="decreasePassengers">-</button>
+                    <input type="text" class="form-control text-center" id="passengers" value="1" readonly>
+                    <button class="btn btn-outline-secondary" type="button" id="increasePassengers">+</button>
+                </div>
+            </div>
+            <div class="d-grid">
+                <a href="search.html"><button class="btn btn-primary w-100">Search flights</button></a>
+            </div>
+        </div>
+        <div class="col-12 col-md-6 offset-md-1 col-lg-6">
+            <div class="calendar-container align-items-center justify-content-center">
+                <div id="datepicker"></div>
+            </div>
+        </div>
+
+    </div>
+    </div>
+
+
+
+  </div>
+
+
+    <!-- Bootstrap JS Bundle with Popper -->
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script>
+      $(document).ready(function() {
+          // Initialize the datepicker
+          $('#datepicker').multiDatesPicker({
+              dateFormat: 'dd M yy',
+              numberOfMonths: 2,
+              maxPicks: 2,
+              onSelect: function(dateText, inst) {
+                  var dates = $('#datepicker').multiDatesPicker('getDates');
+                  if (dates.length > 1) {
+                      $('#departureDate').val(dates[0]);
+                      $('#returnDate').val(dates[1]);
+                  } else {
+                      $('#departureDate').val(dates[0]);
+                      $('#returnDate').val('');
+                  }
+              }
+          });
+  
+          $('#roundTrip').change(function() {
+  $('#returnDateContainer').show();
+  $('#departureCol').removeClass('col-12 col-md-4').addClass('col-12 col-md-2');
+  $('#datepicker').multiDatesPicker('resetDates', 'picked');
+});
+
+$('#oneWay').change(function() {
+  $('#returnDateContainer').hide();
+  $('#departureCol').removeClass('col-12 col-md-2').addClass('col-12 col-md-4');
+  $('#returnDate').val('');
+  $('#datepicker').multiDatesPicker('resetDates', 'picked');
+});
+
+  
+          $('#increasePassengers').click(function() {
+              let passengersInput = $('#passengers');
+              let passengers = parseInt(passengersInput.val(), 10);
+              passengersInput.val(passengers + 1);
+          });
+  
+          $('#decreasePassengers').click(function() {
+              let passengersInput = $('#passengers');
+              let passengers = parseInt(passengersInput.val(), 10);
+              if (passengers > 1) {
+                  passengersInput.val(passengers - 1);
+              }
+          });
+      });
+  </script>
+
+  </body>
+</html>
